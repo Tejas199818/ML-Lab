@@ -28,7 +28,7 @@ num_attributes=len(a[0])-1
 # In[ ]:
 
 
-print("The most general hypothesis:",["?"]*num_attributes)
+print("\nThe most general hypothesis:",["?"]*num_attributes)
 print("The most specific hypothesis:",["0"]*num_attributes)
 
 
@@ -39,16 +39,15 @@ print("The most specific hypothesis:",["0"]*num_attributes)
 
 
 hypothesis=a[0][:-1]
-print("\n Find S: Finding a maximally specific hypothesis")
+print("\nFind S: Finding a maximally specific hypothesis:")
 for i in range (len(a)):
     if a[i][num_attributes] == "1":
         for j in range(num_attributes):
             if a[i][j]!=hypothesis[j]:
                 hypothesis[j]='?'
     print("The taining example no:",i+1," the hyposthesis is:",hypothesis)
-print("\n The maximally specific hypohthesis for training set is")
+print("\nThe maximally specific hypohthesis for training set is")
 print(hypothesis)
-
 
 
 ********************************************Output*********************************************
@@ -57,14 +56,15 @@ print(hypothesis)
 ['sunny', 'warm', 'high', 'strong', 'warm', 'same', '1']
 ['rainy', 'cold', 'high', 'strong', 'warm', 'change', '0']
 ['sunny', 'warm', 'high', 'strong', 'cool', 'change', '1']
+
 The most general hypothesis: ['?', '?', '?', '?', '?', '?']
 The most specific hypothesis: ['0', '0', '0', '0', '0', '0']
 
- Find S: Finding a maximally specific hypothesis
+Find S: Finding a maximally specific hypothesis:
 The taining example no: 1  the hyposthesis is: ['sunny', 'warm', 'normal', 'strong', 'warm', 'same']
 The taining example no: 2  the hyposthesis is: ['sunny', 'warm', '?', 'strong', 'warm', 'same']
 The taining example no: 3  the hyposthesis is: ['sunny', 'warm', '?', 'strong', 'warm', 'same']
 The taining example no: 4  the hyposthesis is: ['sunny', 'warm', '?', 'strong', '?', '?']
 
- The maximally specific hypohthesis for training set is
+The maximally specific hypohthesis for training set is
 ['sunny', 'warm', '?', 'strong', '?', '?']
